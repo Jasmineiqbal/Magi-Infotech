@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - PDF Accessibility</title>
+    <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="contact.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+ <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&family=Londrina+Solid:wght@100;300;400;900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Squada+One&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img src="Logo with darker gre.png" alt="PDF Accessibility Logo" />
+          <span>PDF Accessibility</span>
+        </div>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <!-- <li><a href="library.html">PDF Library</a></li> -->
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Services Section -->
+    
+    <section id="contact" class="contact">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <form>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+<!--           <input type="file" /> -->
+          <textarea rows="5" placeholder="Your Message"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    
+<!-- Modal -->
+<div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle">Message</h2>
+    <p id="modalMessage"></p>
+    <button id="modalCloseBtn">Close</button>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

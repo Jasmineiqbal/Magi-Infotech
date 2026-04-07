@@ -1,0 +1,219 @@
+/* ---------- About Section ---------- */
+h1 {
+  color: rgb(15, 63, 15); /* set your desired text color, e.g., green */
+  text-align: center; /* center the text horizontally */
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.about {
+  display: flex; /* side by side layout */
+  flex-direction: row; /* horizontal by default */
+  align-items: center; /* vertically center text */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 120px; /* space between image and text */
+  padding: 50px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+/* Image container */
+.about-image {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 300px; /* adjust height as needed */
+  max-width: 800px;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+.about-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    rgba(144, 224, 149, 0.6),
+    rgba(146, 229, 171, 0.2)
+  );
+  z-index: 1;
+}
+
+/* Text container */
+.about-text {
+  flex: 1;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: darkgreen;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.about-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet (≤768px) */
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column; /* stack image and text vertically */
+    align-items: center; /* center items */
+    gap: 30px; /* vertical spacing between image and text */
+    width: 90%; /* slightly wider on tablet */
+    padding: 50px 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 95%; /* almost full width */
+    max-width: 100%; /* no max-width restriction */
+    margin: 0 auto; /* center horizontally */
+  }
+
+  .about-image {
+    border-radius: 30px; /* smaller radius on tablet */
+  }
+
+  .about-image img,
+  .about-image .overlay {
+    border-radius: 30px;
+  }
+
+  .about-text {
+    width: 90%;
+    padding: 20px 25px;
+    margin-top: 0;
+    font-size: 0.95rem;
+    opacity: 1 !important; /* force visible */
+    transform: translateY(0) !important;
+  }
+}
+
+/* Mobile (≤480px) */
+@media screen and (max-width: 480px) {
+  .about {
+    gap: 20px; /* smaller spacing */
+    padding: 40px 15px; /* compact padding */
+  }
+
+  .about-image {
+    width: 100%; /* full width */
+    aspect-ratio: 16/9; /* keep proportional height */
+    height: auto;
+    border-radius: 25px; /* slightly smaller corners */
+  }
+
+  .about-image img,
+  .about-image .overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+
+  .about-text {
+    width: 95%;
+    padding: 15px 20px;
+    font-size: 0.9rem; /* smaller readable text */
+    border-radius: 12px;
+  }
+}
+
+/* reverse section*/
+
+/* Reverse layout for alternating sections */
+.about.reverse {
+  flex-direction: row-reverse;
+  gap: 300px; /* space between image and text on desktop */
+  max-width: 1200px; /* larger container for reverse section */
+  margin: 50px auto;
+  padding: 70px 50px; /* more padding for spacious layout */
+}
+
+/* Image in reverse section */
+.about.reverse .about-image {
+  flex: 1.5; /* image takes more space than text */
+  max-width: 800px; /* cap image size */
+  height: auto;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+/* Text in reverse section */
+.about.reverse .about-text {
+  flex: 1;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .about.reverse {
+    flex-direction: column; /* stack vertically */
+    gap: 30px; /* smaller gap between image and text */
+    max-width: 95%; /* reduce container width */
+    padding: 50px 20px; /* smaller padding */
+  }
+
+  .about.reverse .about-image,
+  .about.reverse .about-text {
+    flex: unset; /* reset flex on stacked layout */
+    width: 100%; /* full width */
+    max-width: 100%; /* ensure it fits container */
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .about.reverse {
+    padding: 40px 15px; /* compact padding on mobile */
+    gap: 20px;
+  }
+
+  .about.reverse .about-image {
+    border-radius: 20px; /* slightly smaller rounded corners */
+    height: auto; /* maintain aspect ratio */
+  }
+
+  .about.reverse .about-text {
+    font-size: 0.9rem; /* readable text size */
+  }
+}

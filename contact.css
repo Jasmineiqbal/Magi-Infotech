@@ -1,0 +1,168 @@
+/* 
+.contact-page .nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: 450px;
+  padding: 0;
+}
+
+.contact-page .nav-links li {
+  margin-left: 20px;
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: green;
+   top: 10px;
+  right: 20px;
+} */
+
+/* Container styling */
+.contact .container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #f9f9f9; /* light background */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.contact h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Inputs and textarea */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="file"],
+.contact textarea {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Focus effect */
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+  border-color: #4caf50; /* green border on focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* File input style */
+.contact input[type="file"] {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Textarea styling */
+.contact textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.contact button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50; /* green */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Button hover */
+.contact button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .contact .container {
+    padding: 20px;
+  }
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease-in-out;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #4caf50;
+}
+
+#modalCloseBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#modalCloseBtn:hover {
+  background-color: #45a049;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
