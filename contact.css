@@ -229,7 +229,7 @@
 }
 
 /* Mobile responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
     padding: 30px 15px;
@@ -248,5 +248,82 @@
 
   .contact-left ul li {
     justify-content: center;
+  }
+} */
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 25px;
+    border-radius: 10px;
+  }
+
+  .contact-left,
+  .contact-right {
+    min-width: 100%;
+    padding: 10px;
+  }
+
+  /* Headings */
+  .contact-left h2,
+  .contact-right h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  /* Paragraph text */
+  .contact-left p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  /* Contact list */
+  .contact-left ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 12px;
+  }
+
+  .contact-left ul li i {
+    font-size: 18px;
+  }
+
+  .contact-left ul li strong {
+    display: block;
+    font-size: 0.95rem;
+  }
+
+  .contact-left ul li .contact-info {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  /* Form */
+  .contact-right form {
+    padding: 15px;
+  }
+
+  .contact-right form input,
+  .contact-right form textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .contact-right form button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 90%;
+    margin: 30% auto;
+    padding: 20px;
+  }
+
+  #modalCloseBtn {
+    width: 100%;
   }
 }
