@@ -188,3 +188,21 @@ window.addEventListener("click", (e) => {
 function goToPage(page) {
   window.location.href = page;
 }
+
+window.addEventListener("load", () => {
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.remove("active"); // reset menu
+});
+
+const navLinksItems = document.querySelectorAll("#navLinks a");
+
+navLinksItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active"); // close menu when clicked
+  });
+});
+
+window.onpageshow = function () {
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.remove("active");
+};
