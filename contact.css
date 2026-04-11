@@ -1,106 +1,166 @@
-/* 
-.contact-page .nav-links {
+/* Container for the contact section */
+.contact-container {
   display: flex;
-  list-style: none;
-  margin-left: 450px;
-  padding: 0;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e6f4ea; /* light green background for contrast */
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-.contact-page .nav-links li {
-  margin-left: 20px;
+/* Left column: Info Section */
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  order: 1;
+  padding: 20px;
 }
 
-
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: green;
-   top: 10px;
-  right: 20px;
-} */
-
-/* Container styling */
-.contact .container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 40px;
-  background-color: #f9f9f9; /* light background */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Form heading */
-.contact h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-family: "Boldonse", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Inputs and textarea */
-.contact input[type="text"],
-.contact input[type="email"],
-.contact input[type="file"],
-.contact textarea {
-  width: 100%;
-  padding: 15px 20px;
+.contact-left h2 {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
+  color: #1b5e20; /* deep green heading */
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-left p {
+  font-family: "Roboto Slab", serif;
+  color: #2e7d32;
+  font-weight: 400;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+/*link color*/
+.contact-left .contact-info a {
+  color: #2e7d32; /* change to any color you want */
+  text-decoration: none;
+}
+
+.contact-left .contact-info a:hover {
+  color: #537fae; /* darker shade on hover */
+  text-decoration: underline;
+}
+
+/* List styling */
+.contact-left ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.contact-left ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  outline: none;
-  font-family: "Roboto Condensed", sans-serif;
+  cursor: pointer;
+  background-color: #f1faf2; /* subtle card-like bg */
 }
 
-/* Focus effect */
-.contact input[type="text"]:focus,
-.contact input[type="email"]:focus,
-.contact textarea:focus {
-  border-color: #4caf50; /* green border on focus */
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+.contact-left ul li i {
+  color: #4caf50;
+  font-size: 20px;
+  min-width: 22px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* File input style */
-.contact input[type="file"] {
-  padding: 10px;
-  font-size: 14px;
+.contact-left ul li:hover {
+  background-color: #d4edda;
+  transform: translateX(5px);
 }
 
-/* Textarea styling */
-.contact textarea {
-  resize: vertical;
-  min-height: 120px;
+.contact-left ul li:hover i {
+  color: #1b5e20;
+  transform: scale(1.2);
 }
 
-/* Submit button */
-.contact button {
+.contact-left ul li strong {
+  font-family: "Londrina Solid", sans-serif;
+  color: #1b5e20;
+  font-weight: 700;
+}
+
+.contact-left ul li .contact-info {
+  font-family: "Squada One", cursive;
+  color: #388e3c;
+}
+
+/* Paragraph after list */
+.contact-left p:last-child {
+  font-style: italic;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+/* Right column: Form Section */
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  order: 2;
+  padding: 20px;
+}
+
+.contact-right h1 {
+  margin-bottom: 25px;
+  color: #1b5e20;
+  font-family: "Londrina Solid", sans-serif;
+  font-size: 2rem;
+}
+
+.contact-right form {
+  background-color: #f1faf2;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-right form input,
+.contact-right form textarea {
   width: 100%;
   padding: 15px;
-  background-color: #4caf50; /* green */
-  border: none;
-  border-radius: 8px;
+  margin-bottom: 18px;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Roboto Condensed", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.contact-right form input:focus,
+.contact-right form textarea:focus {
+  border-color: #388e3c;
+  box-shadow: 0 0 8px rgba(56, 142, 60, 0.3);
+}
+
+.contact-right form button {
+  padding: 15px 20px;
+  width: 100%;
+  background-color: #4caf50;
   color: white;
-  font-size: 18px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
+  font-size: 1rem;
+  font-family: "Londrina Solid", sans-serif;
+  transition: all 0.3s ease;
 }
 
-/* Button hover */
-.contact button:hover {
-  background-color: #45a049;
+.contact-right form button:hover {
+  background-color: #1b5e20;
   transform: translateY(-2px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .contact .container {
-    padding: 20px;
-  }
 }
 
 /* Modal Styling */
@@ -117,10 +177,10 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #f1faf2;
   margin: 10% auto;
   padding: 30px 40px;
-  border-radius: 12px;
+  border-radius: 15px;
   max-width: 400px;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -129,7 +189,7 @@
 }
 
 .modal .close {
-  color: #aaa;
+  color: #1b5e20;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -153,9 +213,10 @@
 }
 
 #modalCloseBtn:hover {
-  background-color: #45a049;
+  background-color: #1b5e20;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -164,5 +225,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .contact-left,
+  .contact-right {
+    min-width: 100%;
+    order: unset;
+  }
+
+  .contact-left h2,
+  .contact-right h1 {
+    text-align: center;
+  }
+
+  .contact-left ul li {
+    justify-content: center;
   }
 }

@@ -18,6 +18,9 @@ body {
   background-size: cover; /* fills screen */
   background-position: center; /* center image */
   background-repeat: no-repeat;
+  min-height: 100vh; /* dynamic viewport height (best for mobile) */
+  margin: 0;
+   padding-top: 70px; /* adjust to navbar height */
 }
 
 /* Loaded state for fade-in */
@@ -26,12 +29,6 @@ body.loaded {
 }
 
 /* HOME SECTION */
-.home {
-  /* background-color: white; */
-  color: #1b5e20; /* text color guaranteed white */
-  text-align: center;
-  padding: 80px 20px;
-}
 
 .home h1 {
   color: white;
@@ -61,7 +58,11 @@ body.loaded {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  min-height: 100vh; /* dynamic viewport height (best for mobile) */
+  /* background-color: white; */
+  color: #1b5e20; /* text color guaranteed white */
+  text-align: center;
+  padding: 80px 20px;
 }
 
 /* Top-left text */
@@ -77,6 +78,40 @@ body.loaded {
   margin: 0;
   padding: 0;
   font-size: 36px;
+}
+
+.btn-contact {
+  display: inline-block;
+  background-color: rgb(77, 194, 94); /* dark green for contrast */
+  color: white; /* text color white */
+  padding: 12px 30px; /* spacing */
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Londrina Solid", sans-serif;
+  text-decoration: none;
+  border-radius: 8px; /* rounded corners */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.btn-contact:hover {
+  background-color: #145214; /* slightly darker green on hover */
+  transform: translateY(-2px); /* small lift effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-contact:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-contact {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 
 /* Basic styling */
@@ -139,8 +174,16 @@ body.loaded {
   position: relative;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
+  position: fixed; /* ✅ make it stick */
+  top: 0;          /* stick to top */
+  left: 0;
+  width: 100%; 
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease;
+}
 .nav-links {
   /* display: flex;
   list-style: none;

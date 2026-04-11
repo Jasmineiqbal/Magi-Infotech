@@ -154,8 +154,8 @@ h2 {
 }
 
 .card-img {
-  width: 200px;
-  height: 180px;
+  width: 150px;
+  height: 110px;
   object-fit: cover; /* keeps image nice */
   border-radius: 10px;
   margin-bottom: 15px;
@@ -167,3 +167,8 @@ h2 {
 .card:hover .card-img {
   transform: scale(1.05);
 }
+
+.card h2 {
+  cursor: pointer;
+}
+

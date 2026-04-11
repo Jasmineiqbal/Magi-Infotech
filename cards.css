@@ -1,0 +1,142 @@
+/* pdf accessibility */
+.pdf {
+  /* background-color: white; */
+  /* color: black; */
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.pdf h2 {
+  color: brown;
+  margin-bottom: 20px;
+
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pdf-text {
+  position: absolute;
+  top: 100px; /* distance from top */
+  left: 50%; /* distance from left */
+  /* z-index: 5; */
+  transform: none; /* remove centering transform */
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.pdf-text h2 {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.content {
+  flex: 2;
+  min-width: 300px;
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+  border-radius: 12px;
+  border: 2px solid #48b14b;
+  box-shadow: 0 0 15px rgba(118, 250, 118, 0.6);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px; /* limits size on large screens */
+  margin: 10px auto;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+@media (max-width: 600px) {
+  .service-img {
+    height: 150px; /* smaller height for mobile */
+  }
+}
+
+/*mobile responsive*/
+
+@media (max-width: 768px) {
+  .pdf-text {
+    position: static; /* remove absolute positioning */
+    transform: none;
+    padding: 0 15px;
+  }
+
+  .pdf-text h2 {
+    max-width: 100%;
+    font-size: 18px; /* smaller text for mobile */
+    line-height: 1.5;
+  }
+
+  .pdf {
+    padding: 40px 15px;
+  }
+}
+
+/* MSO */
+.mso-section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.mso-image img {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mso-columns {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* stack on mobile */
+}
+
+.mso-column {
+  flex: 1;
+  min-width: 280px;
+}
+
+.mso-column h1 {
+  color: #8b4513; /* brown */
+  font-family: "Londrina Solid", sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.mso-column p {
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 50;
+  font-style: normal;
+  color: #db7832; /* brown */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mso-columns {
+    flex-direction: column;
+  }
+}

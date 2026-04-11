@@ -1,3 +1,12 @@
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
 window.addEventListener("load", () => {
   document.body.classList.add("loaded"); // fade-in on page load
 });
@@ -175,3 +184,7 @@ modalCloseBtn.addEventListener("click", () => (modal.style.display = "none"));
 window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
+
+function goToPage(page) {
+  window.location.href = page;
+}

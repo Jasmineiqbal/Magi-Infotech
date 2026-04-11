@@ -3,7 +3,13 @@
   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - PDF Accessibility</title>
+   <link
+      rel="icon"
+      type="image/png"
+      sizes="64×64"
+      href="./images/small logo.jpg"
+    />
+    <title>Magi Infotech</title>
     <link rel="stylesheet" href="style.css" />
       <link rel="stylesheet" href="contact.css" />
     
@@ -24,7 +30,7 @@
     <header>
       <nav class="navbar">
         <div class="logo-container">
-          <img src="Logo with darker gre.png" alt="PDF Accessibility Logo" />
+          <img src="./images/Logo with darker gre.png" alt="PDF Accessibility Logo" />
           <span>PDF Accessibility</span>
         </div>
         <div class="menu-toggle" id="menuToggle">&#9776;</div>
@@ -41,17 +47,41 @@
     <!-- Services Section -->
     
     <section id="contact" class="contact">
-      <div class="container">
-        <h1>Contact Us</h1>
-        <form>
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-<!--           <input type="file" /> -->
-          <textarea rows="5" placeholder="Your Message"></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>
+  <div class="container contact-container">
+    
+    <!-- Left side: Form -->
+    <div class="contact-left">
+<h2>Get in Touch</h2>
+      <p>
+        We’re here to help! You can contact us for any inquiries related to our services, PDF accessibility solutions, or Microsoft 365 support.
+      </p>
+      <ul>
+        <li ><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><span class="contact-info">6th Nadar St Goripalayam, Madurai 625002</span></li>
+        <li><i class="fas fa-envelope"></i><strong>Email:</strong> <span class="contact-info"><a href="mailto:manikandan.karuppasamy.com@gmail.com">
+      manikandan.karuppasamy.com@gmail.com
+    </a></span></li>
+        <li><i class="fas fa-phone-alt"></i><strong>Phone:</strong>  <span class="contact-info">+9183007 36396</span></li>
+      </ul>
+      <p>
+        Follow us on social media for updates and tips!
+      </p>
+
+    </div>
+
+    <!-- Right side: Additional Content -->
+    <div class="contact-right">
+      
+      <h1>Contact Us</h1>
+      <form id="contactForm">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</section>
     
 <!-- Modal -->
 <div id="formModal" class="modal">
