@@ -1,92 +1,78 @@
 <!doctype html>
 <html lang="en">
-  
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="64x64"
-      href="./images/small logo.jpg"
-    />
-    <title>Magi Infotech</title>
+
+    <title>Magi Infotech - Services</title>
+
+    
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="services.css" />
-    
+
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&family=Londrina+Solid&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+   
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
- <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Boldonse&family=Londrina+Solid:wght@100;300;400;900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Squada+One&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
-      rel="stylesheet"
-    />
   </head>
+
   <body>
     <!-- Navbar -->
     <header>
       <nav class="navbar">
         <div class="logo-container">
-         <img src="./images/Logo with darker gre.png" alt="PDF Accessibility Logo" />
-          <span>PDF Accessibility</span>
+          <img src="./images/Logo with darker gre.png" alt="Logo" />
+         
         </div>
+
         <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <!-- <li><a href="library.html">PDF Library</a></li> -->
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services">
       <h1>Our Services</h1>
+
       <div class="card-container">
-        <!-- Row 1 -->
-        <div class="card-container-2">
-          <!-- <a href="pdf accessibility.html" class="card-link"> -->
-          <div class="card" onclick="goToPage('pdf accessibility.html')" >
-            <img src="./images/adobe.jpeg" alt="PDF Accessibility" class="card-img" />
-            <!-- <i class="fas fa-file-alt card-icon"></i> -->
-            <h2 >Pdf Accessibility</h2>
-           </div>
-           <!-- </a> -->
-          <div class="card" onclick="goToPage('mso.html')" >
-            <img src="./images/ms 365.jpg" alt="PDF Accessibility" class="card-img" />
-            <!-- <i class="fas fa-image card-icon"></i> -->
-            <h2>MSO 365 Accessibility</h2>
-           
-          <!-- </div>
-           <div class="card" onclick="goToPage('powerpoint.html')" >
-          
-             <img src="./images/card 5.jpg" alt="PDF Accessibility" class="card-img" />
-            <h2>PowerPoint</h2>
-            
-          </div> -->
-
-
+        <div class="card" onclick="goToPage('pdf accessibility.html')">
+          <img src="./images/adobe.jpeg" class="card-img" />
+          <h2>PDF Accessibility</h2>
         </div>
 
-        <!-- Row 2 -->
-        
-          <div class="card" onclick="goToPage('indesign.html')" >
-            <img src="./images/indesign.jpeg" alt="PDF Accessibility" class="card-img" />
-            <!-- <i class="fas fa-wpforms card-icon"></i> -->
-            <h2>Indesign Accessibility</h2>
-            
-          </div>
-           <div class="card" onclick="goToPage('color.html')" >
-            <!-- <i class="fas fa-wpforms card-icon"></i> -->
-             <img src="./images/card 6.png" alt="PDF Accessibility" class="card-img" />
-            <h2>Color Contrast Fixing files as per WCAG guidelines</h2>
-            
-          </div>
+        <div class="card" onclick="goToPage('mso.html')">
+          <img src="./images/ms 365.jpg" class="card-img" />
+          <h2>MSO 365 Accessibility</h2>
+        </div>
+
+        <div class="card" onclick="goToPage('indesign.html')">
+          <img src="./images/indesign.jpeg" class="card-img" />
+          <h2>InDesign Accessibility</h2>
+        </div>
+
+        <div class="card" onclick="goToPage('color.html')">
+          <img src="./images/card 6.png" class="card-img" />
+          <h2>WCAG Color Contrast Fixing</h2>
+        </div>
+
+        <div class="card" onclick="goToPage('pitstop.html')">
+          <img src="./images/pitstop.jpeg" class="card-img" />
+          <h2>Pitstop Design</h2>
         </div>
       </div>
     </section>

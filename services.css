@@ -1,174 +1,100 @@
+/*  Page Title  */
 .services h1 {
-  color: rgb(15, 63, 15); /* set your desired text color, e.g., green */
-  text-align: center; /* center the text horizontally */
-  margin-bottom: 20px;
-  margin-top: 10px;
-  font-family: "Boldonse", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-h2 {
-  font-family: "Londrina Solid", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.services p {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400px;
-  font-style: normal;
-}
-.card p {
-  line-height: 1.9;
-}
-
-/* Parent container (just stacks rows) */
-.card-container {
-  display: flex;
-  flex-direction: column;
-  gap: 100px; /* space BETWEEN rows */
-  margin-top: 30px;
-}
-
-/* Each row */
-.card-container-2 {
-  display: flex;
-  gap: 100px; /* space BETWEEN cards in same row */
-}
-
-/* Cards */
-.card {
-  flex: 1; /* 3 equal cards */
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #117b03;
   text-align: center;
-  transition: all 0.3s ease;
+  margin: 40px 0;
+  font-family: "Boldonse", system-ui;
+  color: #0f3f0f;
 }
 
-.card:hover {
-  transform: translateY(-10px); /* lift effect */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: #f9f9f9;
-}
-.card:hover h2 {
-  color: brown;
-  font-family: "Londrina Solid", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-@media (max-width: 768px) {
-  .card-container-2 {
-    flex-direction: column; /* stack cards */
-  }
-}
-
-.card-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #d3968c;
-  transition: 0.3s;
-}
-
-.card {
-  flex: 1;
+/* Grid Layout  */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 12px;
-  background: white;
-  transition: all 0.4s ease;
-  position: relative;
+}
+
+/*  Card  */
+.card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.35s ease;
   overflow: hidden;
 }
 
-/* Gradient overlay */
-/* .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #c5c7c6, #c0c1c0);
-  opacity: 0;
-  transition: 0.4s;
-  z-index: 0;
-} */
-
-.card {
-  position: relative;
-  border-radius: 12px;
-  background: white;
-  z-index: 1;
-}
-
-/* Gradient border */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 2px; /* thickness of border */
-  border-radius: 12px;
-  background: linear-gradient(135deg, #c5c7c6, #c0c1c0);
-
-  /* This creates the "border only" effect */
-  -webkit-mask:
-    linear-gradient(green 0 0) content-box,
-    linear-gradient(green 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  z-index: -1;
-}
-
-/* Bring content above */
-.card * {
-  position: relative;
-  z-index: 1;
-}
-
 /* Hover effect */
-.card:hover::before {
-  opacity: 1;
-}
-
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  color: green;
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
-/* Icon color change */
-.card:hover .card-icon {
-  color: #8da750;
-}
-
-.card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/*  Image  */
 .card-img {
-  width: 150px;
-  height: 110px;
-  object-fit: cover; /* keeps image nice */
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-.card-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
   transition: transform 0.4s ease;
 }
 
 .card:hover .card-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/*  Title  */
 .card h2 {
-  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  transition: 0.3s;
 }
 
+.card:hover h2 {
+  color: #1b5e20;
+}
+
+/*  Animation  */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Mobile  */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}

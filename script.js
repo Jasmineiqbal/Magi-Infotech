@@ -24,9 +24,8 @@ document.querySelectorAll("a").forEach((link) => {
   });
 });
 
-// =========================
 // HAMBURGER MENU (MOBILE)
-// =========================
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -35,19 +34,27 @@ if (menuToggle && navLinks) {
     navLinks.classList.toggle("active");
   });
 
-  // Close menu when a link is clicked (mobile)
+  // Close menu when clicking a link (mobile)
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      if (navLinks.classList.contains("active")) {
-        navLinks.classList.remove("active");
-      }
+      navLinks.classList.remove("active");
     });
   });
 }
 
-// =========================
+/* Scroll effect */
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
 // SECTION FADE-IN ON SCROLL
-// =========================
+
 const sections = document.querySelectorAll("section");
 
 const fadeInOnScroll = () => {
@@ -75,14 +82,10 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
       }
-      // Optional: remove class when scrolling back up
-      // else {
-      //   entry.target.classList.remove('visible');
-      // }
     });
   },
   {
-    threshold: 0.2, // 20% of the div must be visible
+    threshold: 0.2,
   },
 );
 
@@ -95,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible"); // fade in
-          obs.unobserve(entry.target); // stop observing after animation
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
         }
       });
     },
@@ -139,42 +142,95 @@ cards.forEach((card, index) => {
 });
 
 // Select the form
-const contactForm = document.querySelector(".contact form");
+
+const form = document.getElementById("contactForm");
+
 const modal = document.getElementById("formModal");
-const closeModal = document.querySelector(".modal .close");
-const modalCloseBtn = document.getElementById("modalCloseBtn");
 const modalTitle = document.getElementById("modalTitle");
 const modalMessage = document.getElementById("modalMessage");
 
-contactForm.addEventListener("submit", function (e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = contactForm.querySelector('input[type="text"]').value.trim();
-  const email = contactForm.querySelector('input[type="email"]').value.trim();
-  const message = contactForm.querySelector("textarea").value.trim();
+  const name = form.querySelector('input[name="name"]').value.trim();
+  const email = form.querySelector('input[name="email"]').value.trim();
+  const message = form.querySelector('textarea[name="message"]').value.trim();
 
-  // Basic validation
-  if (name === "" || email === "" || message === "") {
+  // validation
+  if (!name || !email || !message) {
     modalTitle.textContent = "Error!";
-    modalMessage.textContent = "Please fill in all fields before submitting.";
+    modalMessage.textContent = "Please fill all fields.";
     modal.style.display = "block";
-  } else if (!validateEmail(email)) {
+    return;
+  }
+
+  if (!validateEmail(email)) {
     modalTitle.textContent = "Error!";
-    modalMessage.textContent = "Please enter a valid email address.";
+    modalMessage.textContent = "Invalid email address.";
     modal.style.display = "block";
-  } else {
-    modalTitle.textContent = "Success!";
-    modalMessage.textContent = "Thank you! Your message has been sent.";
-    modal.style.display = "block";
-    contactForm.reset();
+    return;
+  }
+
+  // send to Formspree
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        modalTitle.textContent = "Success!";
+        modalMessage.textContent = "Message sent successfully!";
+        form.reset();
+      } else {
+        modalTitle.textContent = "Error!";
+        modalMessage.textContent = "Failed to send message.";
+      }
+      modal.style.display = "block";
+    })
+    .catch(() => {
+      modalTitle.textContent = "Error!";
+      modalMessage.textContent = "Network error.";
+      modal.style.display = "block";
+    });
+});
+
+const closeModal = document.querySelector(".modal .close");
+const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+// close when X clicked
+if (closeModal) {
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
+// close when button clicked
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
+// close when clicking outside popup
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
 
-// Email validation function
+// email validation
 function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+// Email validation function
+// function validateEmail(email) {
+//   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return re.test(email);
+// }
 
 // Close modal
 closeModal.addEventListener("click", () => (modal.style.display = "none"));
@@ -206,3 +262,5 @@ window.onpageshow = function () {
   const navLinks = document.getElementById("navLinks");
   navLinks.classList.remove("active");
 };
+
+//form submission

@@ -11,7 +11,7 @@
     />
     <title>Magi Infotech</title>
     <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="contact.css" />
     
     <link
       rel="stylesheet"
@@ -31,14 +31,14 @@
       <nav class="navbar">
         <div class="logo-container">
           <img src="./images/Logo with darker gre.png" alt="PDF Accessibility Logo" />
-          <span>PDF Accessibility</span>
+          
         </div>
         <div class="menu-toggle" id="menuToggle">&#9776;</div>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <!-- <li><a href="library.html">PDF Library</a></li> -->
+          
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
@@ -56,26 +56,29 @@
         We’re here to help! You can contact us for any inquiries related to our services, PDF accessibility solutions, or Microsoft 365 support.
       </p>
       <ul>
-        <li ><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><span class="contact-info">6th Nadar St Goripalayam, Madurai 625002</span></li>
+        <li ><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong><span class="contact-info">6th Nadar St Goripalayam, Madurai 625002</span></li>
         <li><i class="fas fa-envelope"></i><strong>Email:</strong> <span class="contact-info"><a href="mailto:manikandan.karuppasamy.com@gmail.com">
       manikandan.karuppasamy.com@gmail.com
     </a></span></li>
         <li><i class="fas fa-phone-alt"></i><strong>Phone:</strong>  <span class="contact-info">+9183007 36396</span></li>
       </ul>
-      <p>
-        Follow us on social media for updates and tips!
-      </p>
-
+      
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-left">
+    <p>© 2026 Magi Infotech . All rights reserved.</p>
+  </div>
+</footer>
     </div>
 
     <!-- Right side: Additional Content -->
     <div class="contact-right">
       
       <h1>Contact Us</h1>
-      <form id="contactForm">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <textarea rows="5" placeholder="Your Message"></textarea>
+      <form id="contactForm" action="https://formspree.io/f/xwvaedbz" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <textarea rows="5" name="message" placeholder="Your Message"></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>

@@ -8,7 +8,7 @@
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #e6f4ea; /* light green background for contrast */
+  background-color: #e6f4ea;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
@@ -23,7 +23,7 @@
 
 .contact-left h2 {
   margin-bottom: 20px;
-  color: #1b5e20; /* deep green heading */
+  color: #1b5e20;
   font-family: "Londrina Solid", sans-serif;
   font-size: 2rem;
   letter-spacing: 1px;
@@ -31,21 +31,22 @@
 }
 
 .contact-left p {
-  font-family: "Roboto Slab", serif;
-  color: #2e7d32;
-  font-weight: 400;
+  font-family: "Londrina Solid", sans-serif;
+  color: black;
+
+  font-weight: 300;
   margin-bottom: 25px;
   line-height: 1.8;
 }
 
-/*link color*/
 .contact-left .contact-info a {
-  color: #2e7d32; /* change to any color you want */
+  color: rgba(36, 33, 33, 0.516);
+
   text-decoration: none;
 }
 
 .contact-left .contact-info a:hover {
-  color: #537fae; /* darker shade on hover */
+  color: #537fae;
   text-decoration: underline;
 }
 
@@ -65,7 +66,7 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
-  background-color: #f1faf2; /* subtle card-like bg */
+  background-color: #f1faf2;
 }
 
 .contact-left ul li i {
@@ -89,13 +90,14 @@
 
 .contact-left ul li strong {
   font-family: "Londrina Solid", sans-serif;
-  color: #1b5e20;
+
+  color: black;
   font-weight: 700;
 }
 
 .contact-left ul li .contact-info {
   font-family: "Squada One", cursive;
-  color: #388e3c;
+  color: rgba(36, 33, 33, 0.516);
 }
 
 /* Paragraph after list */
@@ -228,29 +230,6 @@
   }
 }
 
-/* Mobile responsive */
-/* @media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    padding: 30px 15px;
-  }
-
-  .contact-left,
-  .contact-right {
-    min-width: 100%;
-    order: unset;
-  }
-
-  .contact-left h2,
-  .contact-right h1 {
-    text-align: center;
-  }
-
-  .contact-left ul li {
-    justify-content: center;
-  }
-} */
-
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -325,5 +304,33 @@
 
   #modalCloseBtn {
     width: 100%;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 15px 40px;
+  /* background: #0f3f0f; */
+  color: #000; /* changed to black */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-top: 40px;
+}
+
+.footer-left p {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 0.5px;
+  color: #000; /* ensure paragraph text is black */
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer {
+    justify-content: center;
+    text-align: center;
+    padding: 12px 20px;
   }
 }
