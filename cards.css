@@ -1,13 +1,43 @@
+/* ---------- Page Load Animation ---------- */
+body {
+  animation: pageFade 0.6s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* ---------- Main Section ---------- */
 .pdf {
   padding: 80px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #f7fff8, #ffffff);
+
+  background: linear-gradient(270deg, #f7fff8, #ffffff, #e8f5ec);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
 }
 
+/* Animated Gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
+/* ---------- Content Card ---------- */
 .pdf-text {
   max-width: 850px;
   width: 100%;
@@ -22,10 +52,44 @@
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 
-  animation: fadeUp 0.8s ease forwards;
+  animation:
+    fadeUp 0.8s ease forwards,
+    floatCard 4s ease-in-out infinite;
 }
 
-/*Image*/
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Effect */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Hover Glow */
+.pdf-text:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 150, 100, 0.25);
+  transition: 0.3s ease;
+}
+
+/* ---------- Image Section ---------- */
 .image-container {
   width: 100%;
   max-width: 600px;
@@ -35,16 +99,26 @@
   position: relative;
 }
 
-
 .service-img {
   width: 100%;
   height: 260px;
   object-fit: cover;
   border-radius: 14px;
-  transition: transform 0.4s ease;
+
+  opacity: 0;
+  transform: scale(0.95);
+  animation: imgReveal 1s ease forwards;
 }
 
-/* Hover zoom */
+/* Image Reveal */
+@keyframes imgReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover Zoom */
 .image-container:hover .service-img {
   transform: scale(1.05);
 }
@@ -57,7 +131,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
 }
 
-/* Text  */
+/* ---------- Text Animation ---------- */
 .pdf h2 {
   color: #1a1a1a;
   font-family: "Londrina Solid", sans-serif;
@@ -67,27 +141,29 @@
   line-height: 1.7;
 
   margin-bottom: 18px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textFade 0.8s ease forwards;
 }
 
+.pdf h2:nth-child(1) {
+  animation-delay: 0.3s;
+}
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+.pdf h2:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+/* Text Fade */
+@keyframes textFade {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-.pdf-text:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease;
-}
-
-/*  Mobile  */
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .pdf {
     padding: 40px 15px;
@@ -106,9 +182,8 @@
   }
 }
 
-
 /*  MSO Section  */
-.mso-section {
+/* .mso-section {
   padding: 60px 20px;
   max-width: 1100px;
   margin: 0 auto;
@@ -177,12 +252,11 @@
   font-size: 1rem;
   line-height: 1.7;
   color: #333;
-}
+} */
 
 /*  Responsive  */
 
-
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .mso-columns {
     flex-direction: column;
     align-items: center;
@@ -214,4 +288,4 @@
   .mso-column p {
     font-size: 0.95rem;
   }
-}
+} */
