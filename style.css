@@ -47,27 +47,6 @@ body.loaded {
   font-style: normal;
 }
 
-/* .home {
-  position: relative;
-  color: white;
-  overflow: hidden;
-  padding: 0;
-  background-image: url("./images/home.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 100vh;
-
- 
-  text-align: center;
-  padding: 80px 20px;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-} */
-
 .home {
   position: relative;
   color: white;
@@ -78,7 +57,7 @@ body.loaded {
   background-position: center;
   background-repeat: no-repeat;
 
-  background-attachment: fixed; /* ⭐ KEY FIX */
+  /* background-attachment: scroll; */
 
   width: 100%;
   min-height: 100vh;
@@ -89,12 +68,18 @@ body.loaded {
   text-align: center;
   padding: 0 40px;
 }
+
 .home::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/home.jpg") center/cover no-repeat;
+  z-index: -1;
 }
+
 /* Top-left text */
 .home-text {
   position: absolute;
@@ -203,14 +188,9 @@ body.loaded {
   box-shadow: none;
 }
 
-/* SCROLL EFFECT */
 .navbar.scrolled {
-  padding: 10px 50px;
-  background: rgba(255, 255, 255, 0.95);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
+  background: white; /* same as default */
+  box-shadow: none;
 }
 
 /* LOGO */
@@ -311,7 +291,7 @@ body.loaded {
   transform: rotate(90deg);
 }
 
-/* ================= MOBILE ================= */
+/*  MOBILE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
